@@ -34,7 +34,7 @@ public class BuildTokenJWT {
             token.getClaims().stream().forEach(claim -> jwt.claim(claim.getKey(),
             claim.getValue()));
 
-            String tkn = jwt.sign();
+            String tkn = jwt.innerSign().encrypt();
 
             PayloadDTO payload = new PayloadDTO("JWT", tkn);
 
