@@ -38,6 +38,8 @@ public class BuildTokenJWT {
 
             PayloadDTO payload = new PayloadDTO("JWT", tkn);
 
+            System.out.println("Authentication token has been created to "+token.getIssuer());
+
             return new APIResponse<PayloadDTO>(200, List.of(payload));
 
         } catch (BusinessException e) {
